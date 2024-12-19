@@ -42,12 +42,16 @@ class DetailScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Column(
-                    children: [
-                      Icon(Icons.play_circle_outline),
-                      SizedBox(height: 8.0,),
-                      Text('Listen Voice'),
-                    ],
+                  IconButton(
+                    icon: Column(
+                      children: [
+                        Icon(Icons.favorite_border_outlined),
+                        SizedBox(height: 8.0,),
+                        Text('Luv'),
+                      ],
+                    ),
+                    iconSize: 40.0,
+                    onPressed: (){},
                   ),
                   Column(
                     children: [
