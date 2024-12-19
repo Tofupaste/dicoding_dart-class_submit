@@ -36,7 +36,44 @@ class DetailScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 30.0, fontWeight: FontWeight.bold,
                 ),)
-              )
+              ),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Column(
+                    children: [
+                      Icon(Icons.play_circle_outline),
+                      SizedBox(height: 8.0,),
+                      Text('Listen Voice'),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Icon(Icons.info_outline),
+                      SizedBox(height: 8.0,),
+                      Text('About'),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Icon(Icons.favorite_border_outlined),
+                      SizedBox(height: 8.0,),
+                      Text('Luv'),
+                    ],
+                  )
+                ],
+                ),
+            ),
+            Container(
+                  padding: const EdgeInsets.all(16.0),
+                  child: const Text(
+                    'Saki Tenma is a Character from Game Cell phone that named Project Sekai. She is a younger sister of Tenma Tsukasa.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16.0 ),
+                  ),
+                  )
             ],
           ),
         )
