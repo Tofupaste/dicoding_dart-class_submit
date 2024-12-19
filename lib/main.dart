@@ -27,7 +27,9 @@ class DetailScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: <Widget> [
-          const Text('Saki Tenma'),
+          Container(
+            margin: const EdgeInsets.only(top: 16.0),
+            child:Text('Saki Tenma')),
         ],
       ),
     );
