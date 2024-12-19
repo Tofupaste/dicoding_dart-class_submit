@@ -45,28 +45,36 @@ class DetailScreen extends StatelessWidget {
                   IconButton(
                     icon: Column(
                       children: [
-                        Icon(Icons.favorite_border_outlined),
+                        Icon(Icons.play_circle_outline),
                         SizedBox(height: 8.0,),
-                        Text('Luv'),
+                        Text('Voice'),
                       ],
                     ),
                     iconSize: 40.0,
                     onPressed: (){},
                   ),
-                  Column(
-                    children: [
-                      Icon(Icons.info_outline),
-                      SizedBox(height: 8.0,),
-                      Text('About'),
-                    ],
+                  IconButton(
+                    icon: Column(
+                      children: [
+                        Icon(Icons.person_outline),
+                        SizedBox(height: 8.0,),
+                        Text('About'),
+                      ],
+                    ),
+                    iconSize: 40.0,
+                    onPressed: (){},
                   ),
-                  Column(
-                    children: [
-                      Icon(Icons.favorite_border_outlined),
-                      SizedBox(height: 8.0,),
-                      Text('Luv'),
-                    ],
-                  )
+                  IconButton(
+                    icon: Column(
+                      children: [
+                        Icon(Icons.favorite_border_outlined),
+                        SizedBox(height: 8.0,),
+                        Text('Favorite'),
+                      ],
+                    ),
+                    iconSize: 40.0,
+                    onPressed: (){},
+                  ),
                 ],
                 ),
             ),
