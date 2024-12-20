@@ -106,18 +106,27 @@ class DetailScreen extends StatelessWidget {
                 children: [
                   Padding( 
                     padding: const EdgeInsets.all( 4.0),
-                    child: Image.network(
-                    'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png'),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Image.network(
+                      'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png'),
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                    'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png'),
+                  Padding( 
+                    padding: const EdgeInsets.all( 4.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Image.network(
+                      'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png'),
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                    'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png'),
+                  Padding( 
+                    padding: const EdgeInsets.all( 4.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Image.network(
+                      'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png'),
+                    ),
                   ),
               ],
             )
