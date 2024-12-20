@@ -104,30 +104,36 @@ class DetailScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 // shrinkWrap: true,
                 children: [
-                  Padding( 
+                    Padding( 
                     padding: const EdgeInsets.all( 4.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10.0),
                       child: Image.network(
-                      'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png'),
+                      'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png',
+                      fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
-                  Padding( 
+                    ),
+                    Padding( 
                     padding: const EdgeInsets.all( 4.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10.0),
                       child: Image.network(
-                      'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png'),
+                      'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png',
+                      fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
-                  Padding( 
+                    ),                       
+                    Padding( 
                     padding: const EdgeInsets.all( 4.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10.0),
                       child: Image.network(
-                      'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png'),
+                      'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png',
+                      fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
+                    ),
               ],
             )
             ),
