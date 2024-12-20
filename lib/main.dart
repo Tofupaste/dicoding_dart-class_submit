@@ -32,11 +32,21 @@ class DetailScreen extends StatelessWidget {
             Image.asset('images/saki_bg.png'),
             Container(
               margin: const EdgeInsets.only(top: 16.0),
-              child:const Text('Saki Tenma', 
-                textAlign: TextAlign.center, 
-                style: TextStyle(
-                  fontSize: 30.0, fontWeight: FontWeight.bold,
-                ),),
+              child: Column(
+                children: <Widget>[
+                  Text('Saki Tenma', 
+                    textAlign: TextAlign.center, 
+                    style: TextStyle(
+                      fontSize: 30.0, fontWeight: FontWeight.bold,
+                    ),),
+                  Text('天馬咲希', 
+                    textAlign: TextAlign.center, 
+                    style: const TextStyle(
+                      fontSize: 15.0,
+                      color: Color(0xFFFFDD45),
+                    ),),
+                ],
+              )
               ),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 16.0),
