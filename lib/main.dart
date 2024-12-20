@@ -29,20 +29,20 @@ class DetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget> [
+            Image.asset('images/saki_bg.png'),
             Container(
               margin: const EdgeInsets.only(top: 16.0),
               child:const Text('Saki Tenma', 
                 textAlign: TextAlign.center, 
                 style: TextStyle(
                   fontSize: 30.0, fontWeight: FontWeight.bold,
-                ),)
+                ),),
               ),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Image.asset('images/saki_bg.png'),
                   IconButton(
                     icon: Column(
                       children: [
