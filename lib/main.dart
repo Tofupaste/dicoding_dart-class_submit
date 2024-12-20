@@ -42,6 +42,7 @@ class DetailScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
+                  Image.asset('images/saki_bg.png'),
                   IconButton(
                     icon: Column(
                       children: [
