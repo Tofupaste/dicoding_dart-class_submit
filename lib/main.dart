@@ -26,6 +26,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget> [
@@ -96,10 +97,35 @@ class DetailScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 16.0 ),
                   ),
-                  )
+                  ),
+            SizedBox(
+              height: 150,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                // shrinkWrap: true,
+                children: [
+                  Padding( 
+                    padding: const EdgeInsets.all( 4.0),
+                    child: Image.network(
+                    'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png'),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Image.network(
+                    'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png'),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Image.network(
+                    'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png'),
+                  ),
+              ],
+            )
+            ),
             ],
           ),
         )
+      ),
     );
   }
 }
