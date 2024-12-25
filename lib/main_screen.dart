@@ -16,7 +16,7 @@ class MainScreen extends StatelessWidget {
           children: <Widget> [
             Expanded(
               flex: 1,
-              child: Image.asset('images/saki.png'),
+              child: Image.asset('images/saki_bg.png'),
             ),
             Expanded(
               flex: 2,
