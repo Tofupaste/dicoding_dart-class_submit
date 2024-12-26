@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:dicoding_submit/main.dart';
+import 'package:dicoding_submit/detail_screen.dart';
 import 'package:dicoding_submit/model/istris.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen ({super.key});
+  const MainScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class MainScreen extends StatelessWidget {
         return InkWell (
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder:(context) {
-              return const DetailScreen();
+              return DetailScreen(place: place,);
             },));
           },
           child: Card(

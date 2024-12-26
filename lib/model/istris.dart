@@ -1,5 +1,4 @@
-// istris.dart
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
 class Istris {
   String name;
@@ -8,6 +7,7 @@ class Istris {
   String band;
   VoidCallback voice;
   String Function() biodata;
+  String desc;
   String imageAsset;
   List<String> imageUrls;
 
@@ -18,6 +18,7 @@ class Istris {
     required this.band,
     required this.voice,
     required this.biodata,
+    required this.desc,
     required this.imageAsset,
     required this.imageUrls,
   });
@@ -33,8 +34,8 @@ var IstrisList = [
       // Code to play the audio file
       playVoice('audio/saki_1.wav');
     },
-    biodata: () =>
-        'Saki Tenma is a cheerful and kind character from the game Project Sekai.',
+    biodata: () => 'For more information, visit: https://projectsekai.fandom.com/wiki/Saki_Tenma',
+    desc: 'Saki Tenma is a Character from Game Cell phone that named Project Sekai. She is a younger sister of Tenma Tsukasa.',
     imageAsset: 'images/saki_bg.png',
     imageUrls: [
       'https://static.wikia.nocookie.net/projectsekai/images/6/63/The_Best_Doll_Festival%21.png',
