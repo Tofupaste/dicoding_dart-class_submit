@@ -12,6 +12,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   TextEditingController _searchController = TextEditingController();
   List<ProjectSekaiChar> _filteredCharacters = ProjectSekaiCharList;
+  String? _selectedGroup;
 
   @override
   void initState() {
@@ -30,10 +31,26 @@ class _MainScreenState extends State<MainScreen> {
     final query = _searchController.text.toLowerCase();
     setState(() {
       _filteredCharacters = ProjectSekaiCharList.where((character) {
-        return character.name.toLowerCase().contains(query) ||
+        final matchesQuery = character.name.toLowerCase().contains(query) ||
             character.jpName.toLowerCase().contains(query) ||
             character.band.toLowerCase().contains(query);
+        final matchesGroup = _selectedGroup == null || character.band == _selectedGroup;
+        return matchesQuery && matchesGroup;
       }).toList();
+    });
+  }
+
+  void _selectGroup(String? group) {
+    setState(() {
+      _selectedGroup = group;
+      _filterCharacters();
+    });
+  }
+
+  void _resetFilter() {
+    setState(() {
+      _selectedGroup = null;
+      _filterCharacters();
     });
   }
 
@@ -124,6 +141,30 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
           );
+        },
+      ),
+      floatingActionButton: PopupMenuButton<String>(
+        icon: Icon(Icons.filter_list),
+        onSelected: (value) {
+          if (value == 'Reset') {
+            _resetFilter();
+          } else {
+            _selectGroup(value);
+          }
+        },
+        itemBuilder: (context) {
+          return [
+            PopupMenuItem(
+              value: 'Reset',
+              child: Text('Reset Filter'),
+            ),
+            ...ProjectSekaiCharList.map((character) => character.band).toSet().map((group) {
+              return PopupMenuItem(
+                value: group,
+                child: Text(group),
+              );
+            }).toList(),
+          ];
         },
       ),
     );

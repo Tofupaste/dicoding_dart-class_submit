@@ -61,6 +61,7 @@ flutter:
     - images/ena_bg.png
     - images/minori_bg.png
     - images/kohane_bg.png
+    - images/emu_bg.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

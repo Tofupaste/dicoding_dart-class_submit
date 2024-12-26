@@ -156,11 +156,11 @@ var ProjectSekaiCharList = [
         'Emu Otori is an energetic and playful girl who loves to entertain others. She is a member of the theatrical troupe Wonderlands×Showtime and is always full of surprises.',
     imageAsset: 'images/emu_bg.png',
     imageUrls: [
-      'https://static.wikia.nocookie.net/projectsekai/images/1/1d/Emu_1.png',
-      'https://static.wikia.nocookie.net/projectsekai/images/2/2e/Emu_2.png',
-      'https://static.wikia.nocookie.net/projectsekai/images/3/3f/Emu_3.png',
-      'https://static.wikia.nocookie.net/projectsekai/images/4/4g/Emu_4.png',
-      'https://static.wikia.nocookie.net/projectsekai/images/5/5h/Emu_5.png',
+      'https://static.wikia.nocookie.net/projectsekai/images/a/ae/Our_Eyes_Are_Sparkling%E2%98%86_T.png',
+      'https://static.wikia.nocookie.net/projectsekai/images/2/27/Beware_of_Mr._Thief%21_T.png',
+      'https://static.wikia.nocookie.net/projectsekai/images/e/e5/Studying_Even_While_Sleeping%3F_T.png',
+      'https://static.wikia.nocookie.net/projectsekai/images/a/a5/One_Who_Laughs_at_the_World.png',
+      'https://static.wikia.nocookie.net/projectsekai/images/c/c8/The_Barbeque_Magistrate%3F%21_T.png',
     ],
   ),
 ];
