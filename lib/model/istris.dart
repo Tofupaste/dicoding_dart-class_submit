@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Istris {
   String name;
@@ -34,7 +35,7 @@ var IstrisList = [
       // Code to play the audio file
       playVoice('audio/saki_1.wav');
     },
-    biodata: () => 'For more information, visit: https://projectsekai.fandom.com/wiki/Saki_Tenma',
+    biodata: () => 'https://projectsekai.fandom.com/wiki/Saki_Tenma',
     desc: 'Saki Tenma is a Character from Game Cell phone that named Project Sekai. She is a younger sister of Tenma Tsukasa.',
     imageAsset: 'images/saki_bg.png',
     imageUrls: [
@@ -48,4 +49,13 @@ var IstrisList = [
 void playVoice(String path) {
   // Implement the function to play the audio file
   print('Playing voice from $path');
+  // Add your audio playing code here
+}
+
+Future<void> launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
 }

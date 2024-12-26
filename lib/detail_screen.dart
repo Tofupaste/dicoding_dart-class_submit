@@ -58,15 +58,8 @@ class DetailScreen extends StatelessWidget {
                     ),
                     iconSize: 40.0,
                     onPressed: () {
-                      // Show biodata
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            content: Text(place.biodata()),
-                          );
-                        },
-                      );
+                      // Open the biodata link
+                      launchURL(place.biodata());
                     }, // Connect to the biodata function
                   ),
                   FavoriteButton(),
