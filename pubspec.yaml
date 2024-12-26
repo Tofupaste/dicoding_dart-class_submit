@@ -54,6 +54,7 @@ flutter:
   uses-material-design: true
   assets:
     - images/saki_bg.png
+    - audio/saki_1.wav
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

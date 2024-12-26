@@ -1,6 +1,6 @@
 import 'package:dicoding_submit/main_screen.dart';
 import 'package:flutter/material.dart';
-
+import 'package:dicoding_submit/model/istris.dart'; // Import the Istris class
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -57,12 +57,12 @@ class DetailScreen extends StatelessWidget {
                     icon: Column(
                       children: [
                         Icon(Icons.play_circle_outline),
-                        SizedBox(height: 8.0,),
+                        SizedBox(height: 8.0),
                         Text('Voice'),
                       ],
                     ),
                     iconSize: 40.0,
-                    onPressed: (){},
+                    onPressed: IstrisList[0].voice, // Connect to the voice function
                   ),
                   IconButton(
                     icon: Column(
