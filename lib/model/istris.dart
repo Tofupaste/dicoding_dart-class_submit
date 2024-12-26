@@ -3,6 +3,7 @@ import 'dart:ui';
 
 class Istris {
   String name;
+  String jpname;
   String umur;
   String band;
   VoidCallback voice;
@@ -12,6 +13,7 @@ class Istris {
 
   Istris({
     required this.name,
+    required this.jpname,
     required this.umur,
     required this.band,
     required this.voice,
@@ -24,6 +26,7 @@ class Istris {
 var IstrisList = [
   Istris(
     name: 'Saki Tenma',
+    jpname: '天馬咲希',
     umur: '17',
     band: 'Leo/need',
     voice: () {
