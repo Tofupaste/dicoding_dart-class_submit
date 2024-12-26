@@ -30,7 +30,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  url_launcher: ^6.0.20
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -55,7 +54,14 @@ flutter:
   uses-material-design: true
   assets:
     - images/saki_bg.png
-    - audio/saki_1.wav
+    - images/ichika_bg.png
+    - images/honami_bg.png
+    - images/shiho_bg.png
+    - images/mizuki_bg.png
+    - images/ena_bg.png
+    - images/minori_bg.png
+    - images/kohane_bg.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

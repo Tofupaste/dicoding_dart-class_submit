@@ -1,93 +1,103 @@
-import 'package:dicoding_submit/model/istris.dart';
 import 'package:flutter/material.dart';
+import 'package:dicoding_submit/model/projectsekaichar.dart';
 
 class DetailScreen extends StatelessWidget {
-  final Istris place;
-  const DetailScreen({Key? key, required this.place}) : super(key: key);
- 
+  final ProjectSekaiChar character;
+
+  const DetailScreen({Key? key, required this.character}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text(character.name),
+        backgroundColor: Colors.blueAccent,
+        actions: [
+          FavoriteButton(),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Image.asset(place.imageAsset),
-            Container(
-              margin: const EdgeInsets.only(top: 16.0),
-              child: Column(
-                children: <Widget>[
-                  Text(place.name, 
-                    textAlign: TextAlign.center, 
-                    style: TextStyle(
-                      fontSize: 30.0, fontWeight: FontWeight.bold,
-                    ),),
-                  Text(place.jpname, 
-                    textAlign: TextAlign.center, 
-                    style: const TextStyle(
-                      fontSize: 15.0,
-                      color: Color(0xFFFFDD45),
-                    ),),
-                ],
-              )
-              ),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  IconButton(
-                    icon: Column(
-                      children: [
-                        Icon(Icons.play_circle_outline),
-                        SizedBox(height: 8.0),
-                        Text('Voice'),
-                      ],
-                    ),
-                    iconSize: 40.0,
-                    onPressed: place.voice, // Connect to the voice function
-                  ),
-                  IconButton(
-                    icon: Column(
-                      children: [
-                        Icon(Icons.person_outline),
-                        SizedBox(height: 8.0),
-                        Text('About'),
-                      ],
-                    ),
-                    iconSize: 40.0,
-                    onPressed: () {
-                      // Open the biodata link
-                      launchURL(place.biodata());
-                    }, // Connect to the biodata function
-                  ),
-                  FavoriteButton(),
-                ],
-                ),
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Main Character Image
+            Image.asset(
+              character.imageAsset,
+              width: double.infinity,
+              height: 250,
+              fit: BoxFit.cover,
             ),
-            Container(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text(
-                    place.desc,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 16.0 ),
+            const SizedBox(height: 16),
+
+            // Character Information
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    character.name,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Kanji: ${character.jpName}',
+                    style: const TextStyle(fontSize: 18, color: Colors.grey),
                   ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Age: ${character.age}',
+                    style: const TextStyle(fontSize: 18, color: Colors.grey),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Group: ${character.band}',
+                    style: const TextStyle(fontSize: 18, color: Colors.grey),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    character.description,
+                    style: const TextStyle(fontSize: 16),
+                    textAlign: TextAlign.justify,
+                  ),
+                ],
+              ),
+            ),
+
+            // Additional Images
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                'Gallery',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
             SizedBox(
-              height: 150,
-              child: ListView(
+              height: 120,
+              child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                // shrinkWrap: true,
-                children: place.imageUrls.map((url) {
+                itemCount: character.imageUrls.length,
+                itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.network(url),
-                                   ),
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.network(
+                        character.imageUrls[index],
+                        width: 120,
+                        height: 120,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   );
-                }).toList(),
+                },
               ),
             ),
           ],
@@ -100,14 +110,14 @@ class DetailScreen extends StatelessWidget {
 
 class FavoriteButton extends StatefulWidget {
   const FavoriteButton({Key? key}) : super(key: key);
- 
+
   @override
   _FavoriteButtonState createState() => _FavoriteButtonState();
 }
- 
+
 class _FavoriteButtonState extends State<FavoriteButton> {
   bool isFavorite = false;
- 
+
   @override
   Widget build(BuildContext context) {
     return IconButton(
